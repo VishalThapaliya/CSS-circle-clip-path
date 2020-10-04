@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: consolas;
+}
+
+.main-container {
+    position: relative;
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.profile-container {
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.profile-container .image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    clip-path: circle(400px at center 100px);
+    -webkit-clip-path: circle(400px at circle 100px);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.profile-container:hover .image-container {
+    clip-path: circle(80px at center 100px);
+    -webkit-clip-path: circle(400px at circle 100px);
+    transition-delay: 0s;
+}
+
+.profile-container .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-container .profile-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 55%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.profile-container .profile-content h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container .profile-content a {
+    text-decoration: none;
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    display: inline-block;
+}
+
+.profile-container .profile-content h2,
+.profile-container .profile-content p,
+.profile-container .profile-content a {
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateY(20px);
+}
+
+.profile-container:hover .profile-content h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+.profile-container:hover .profile-content p {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.7s;
+}
+
+.profile-container:hover .profile-content a {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.9s;
+}
